@@ -1,2 +1,2 @@
 # learn-github-actions
-repo to practice with github actions
+REPO to practice with github actions
