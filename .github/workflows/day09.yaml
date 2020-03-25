@@ -21,7 +21,7 @@ jobs:
         USERNAME=mmlogin
         REPOSLUG=learn-github-actions
 
-        docker login docker.pkg.github.com --username ${USERNAME} --password ${{ secrets.GITHUB_TOKEN }}
+        echo ${{ secrets.GITHUB_TOKEN }} | docker login docker.pkg.github.com --username ${USERNAME} --password-stdin
         docker build . --file Dockerfile --tag docker.pkg.github.com/${USERNAME}/${REPOSLUG}/app:${VERSION}
         docker push docker.pkg.github.com/${USERNAME}/${REPOSLUG}/app:${VERSION}
       env:
