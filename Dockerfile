@@ -13,6 +13,7 @@ ENV REF=$GITHUB_REF
 RUN sed -i 's,SHA,'"$GITHUB_SHA"',' index.html
 RUN sed -i 's,REF,'"$GITHUB_REF"',' index.html
 
-RUN tree /
+RUN ls -la ./
+RUN pwd
 
 CMD nginx -g 'daemon off;'
